@@ -49,8 +49,8 @@ class FavoriteGridItemWidget extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.all(10),
-            width: 40,
-            height: 40,
+            width: 30,
+            height: 30,
             child: FlatButton(
               padding: EdgeInsets.all(0),
               onPressed: () {},
