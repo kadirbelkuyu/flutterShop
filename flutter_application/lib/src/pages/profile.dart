@@ -33,7 +33,7 @@ class _ProfileWidgetState extends StateMVC<ProfileWidget> {
       drawer: DrawerWidget(),
       appBar: AppBar(
         leading: new IconButton(
-          icon: new Icon(Icons.sort, color: Theme.of(context).primaryColor),
+          icon: new Icon(Icons.menu, color: Theme.of(context).primaryColor),
           onPressed: () => _con.scaffoldKey?.currentState?.openDrawer(),
         ),
         automaticallyImplyLeading: false,

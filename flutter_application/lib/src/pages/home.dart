@@ -35,7 +35,7 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
     return Scaffold(
       appBar: AppBar(
         leading: new IconButton(
-          icon: new Icon(Icons.sort, color: Theme.of(context).hintColor),
+          icon: new Icon(Icons.menu, color: Theme.of(context).hintColor),
           onPressed: () => widget.parentScaffoldKey.currentState.openDrawer(),
         ),
         automaticallyImplyLeading: false,
