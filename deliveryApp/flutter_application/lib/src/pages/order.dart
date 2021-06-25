@@ -1,5 +1,7 @@
 import 'package:deliveryboy/src/elements/CircularLoadingWidget.dart';
 import 'package:deliveryboy/src/elements/FoodOrderItemWidget.dart';
+import 'package:maps_launcher/maps_launcher.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -395,7 +397,10 @@ class _OrderWidgetState extends StateMVC<OrderWidget> with SingleTickerProviderS
                                   padding: EdgeInsets.all(0),
                                   disabledColor: Theme.of(context).focusColor.withOpacity(0.4),
                                   onPressed: () {
-                                    Navigator.of(context).pushNamed('/Pages', arguments: new RouteArgument(id: '3', param: _con.order));
+                                    MapsLauncher.launchQuery(_con.order.deliveryAddress?.address ?? S.of(context).address_not_provided_please_call_the_client);
+
+
+                                    // Navigator.of(context).pushNamed('/Pages', arguments: new RouteArgument(id: '3', param: _con.order));
                                   },
                                   child: Icon(
                                     Icons.directions,
