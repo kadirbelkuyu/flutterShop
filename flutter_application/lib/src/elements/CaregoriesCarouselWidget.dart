@@ -41,15 +41,15 @@ class CategoriesCarouselWidget extends StatelessWidget {
        height: 250,
             child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent:100,
-                    childAspectRatio: 0.8,
+                    maxCrossAxisExtent:80,
+                    childAspectRatio: 0.6,
                     crossAxisSpacing: 11,
                     mainAxisSpacing: 0),
                 itemCount: this.categories.length,
                 itemBuilder: (context, index) {
                   double _marginLeft = 0;
                   double _margintop = 0;
-                  (index %4 == 0) ? _marginLeft = 10 : _marginLeft = 0;
+                  (index %5 == 0) ? _marginLeft = 5 : _marginLeft = 0;
                   return new CategoriesCarouselItemWidget(
                     marginLeft: _marginLeft,
                     margintop: 5,

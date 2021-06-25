@@ -16,6 +16,7 @@ class SearchBarWidget extends StatelessWidget {
       },
       child: Container(
         padding: EdgeInsets.all(9),
+        margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 0),
         decoration: BoxDecoration(
             color: Colors.transparent,
             border: Border.all(
@@ -27,6 +28,7 @@ class SearchBarWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 12, left: 0),
               child: Icon(Icons.search, color: Theme.of(context).accentColor),
+
             ),
             Expanded(
               child: Text(

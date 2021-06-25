@@ -34,9 +34,9 @@ class _HomeSliderWidgetState extends State<HomeSliderWidget> {
             children: <Widget>[
               CarouselSlider(
                 options: CarouselOptions(
-                  autoPlay: true,
+                  autoPlay: false,
                   autoPlayInterval: Duration(seconds: 5),
-                  height: 180,
+                  height: 270,
                   viewportFraction: 1.0,
                   onPageChanged: (index, reason) {
                     setState(() {
@@ -49,7 +49,7 @@ class _HomeSliderWidgetState extends State<HomeSliderWidget> {
                   return Builder(
                     builder: (BuildContext context) {
                       return Container(
-                        margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                        margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 0),
                         height: 140,
                         decoration: BoxDecoration(
                           boxShadow: [
@@ -61,7 +61,7 @@ class _HomeSliderWidgetState extends State<HomeSliderWidget> {
                             ClipRRect(
                               borderRadius: BorderRadius.all(Radius.circular(10)),
                               child: CachedNetworkImage(
-                                height: 140,
+                                height: double.infinity,
                                 width: double.infinity,
                                 fit: Helper.getBoxFit(slide.imageFit),
                                 imageUrl: slide.image.url,
