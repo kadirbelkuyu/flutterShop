@@ -9,6 +9,7 @@ import '../pages/map.dart';
 import '../pages/notifications.dart';
 import '../pages/orders.dart';
 import 'messages.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 // ignore: must_be_immutable
 class PagesWidget extends StatefulWidget {
@@ -74,7 +75,7 @@ class _PagesWidgetState extends State<PagesWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
+ return WillPopScope(
       onWillPop: Helper.of(context).onWillPop,
       child: Scaffold(
         key: widget.scaffoldKey,
@@ -83,56 +84,74 @@ class _PagesWidgetState extends State<PagesWidget> {
           Navigator.of(context).pushReplacementNamed('/Pages', arguments: widget.currentTab);
         }),
         body: widget.currentPage,
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: Theme.of(context).accentColor,
-          selectedFontSize: 0,
-          unselectedFontSize: 0,
-          iconSize: 22,
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          selectedIconTheme: IconThemeData(size: 28),
-          unselectedItemColor: Theme.of(context).focusColor.withOpacity(1),
-          currentIndex: widget.currentTab,
+        bottomNavigationBar: ConvexAppBar(
+
+
+
+
+          style: TabStyle.fixedCircle,
+
+
+          // selectedItemColor: Theme.of(context).accentColor,
+        //  selectedFontSize: 0,
+          //unselectedFontSize: 0,
+          //iconSize: 22,
+          //elevation: 0,
+          backgroundColor: Colors.orange,
+
+        //  selectedIconTheme: IconThemeData(size: 28),
+         // unselectedItemColor: Theme.of(context).focusColor.withOpacity(1),
+         // currentIndex: widget.currentTab,
+
           onTap: (int i) {
             this._selectTab(i);
           },
+          elevation: 25,
           // this will be set when a new tab is tapped
+          // items: [
+          //   BottomNavigationBarItem(
+          //     icon: Icon(Icons.notifications),
+          //     label: '',
+          //   ),
+          //   BottomNavigationBarItem(
+          //     icon: Icon(Icons.location_on),
+          //     label: '',
+          //   ),
+          //   BottomNavigationBarItem(
+          //       label: '',
+          //       icon: Container(
+          //         width: 42,
+          //         height: 42,
+          //         decoration: BoxDecoration(
+          //           color: Theme.of(context).accentColor,
+          //           borderRadius: BorderRadius.all(
+          //             Radius.circular(50),
+          //           ),
+          //           boxShadow: [
+          //             BoxShadow(color: Theme.of(context).accentColor.withOpacity(0.4), blurRadius: 40, offset: Offset(0, 15)),
+          //             BoxShadow(color: Theme.of(context).accentColor.withOpacity(0.4), blurRadius: 13, offset: Offset(0, 3))
+          //           ],
+          //         ),
+          //         child: new Icon(Icons.home, color: Theme.of(context).primaryColor),
+          //       )),
+          //   BottomNavigationBarItem(
+          //     icon: new Icon(Icons.fastfood),
+          //     label: '',
+          //   ),
+          //   BottomNavigationBarItem(
+          //     icon: new Icon(Icons.chat),
+          //     label: '',
+          //   ),
+          // ],
+
           items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notifications),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.location_on),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-                label: '',
-                icon: Container(
-                  width: 42,
-                  height: 42,
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).accentColor,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(50),
-                    ),
-                    boxShadow: [
-                      BoxShadow(color: Theme.of(context).accentColor.withOpacity(0.4), blurRadius: 40, offset: Offset(0, 15)),
-                      BoxShadow(color: Theme.of(context).accentColor.withOpacity(0.4), blurRadius: 13, offset: Offset(0, 3))
-                    ],
-                  ),
-                  child: new Icon(Icons.home, color: Theme.of(context).primaryColor),
-                )),
-            BottomNavigationBarItem(
-              icon: new Icon(Icons.fastfood),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: new Icon(Icons.chat),
-              label: '',
-            ),
+            TabItem(icon: Icons.notifications_active_rounded, title: ''),
+            TabItem(icon: Icons.map_outlined, title: ''),
+            TabItem(icon: Image.network('http://api1.anamoly.se/public/storage/app/public/437/2021-06-25-15.54.41.jpg'), title: ''),
+            TabItem(icon: Icons.history, title: ''),
+            TabItem(icon: Icons.message, title: ''),
           ],
+
         ),
       ),
     );

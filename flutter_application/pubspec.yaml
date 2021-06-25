@@ -37,6 +37,7 @@ dependencies:
   flutter_html: 1.0.2
   flutter_svg: 0.18.1
   location: 3.0.2
+  convex_bottom_bar: ^1.4.0
   webview_flutter: 0.3.24
   url_launcher: 5.7.7
   firebase_messaging: 7.0.3
