@@ -36,7 +36,7 @@ class _HomeSliderWidgetState extends State<HomeSliderWidget> {
                 options: CarouselOptions(
                   autoPlay: false,
                   autoPlayInterval: Duration(seconds: 5),
-                  height: 270,
+                  height: 230,
                   viewportFraction: 1.0,
                   onPageChanged: (index, reason) {
                     setState(() {
@@ -49,7 +49,7 @@ class _HomeSliderWidgetState extends State<HomeSliderWidget> {
                   return Builder(
                     builder: (BuildContext context) {
                       return Container(
-                        margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+                        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
                         height: 140,
                         decoration: BoxDecoration(
                           boxShadow: [
@@ -59,7 +59,7 @@ class _HomeSliderWidgetState extends State<HomeSliderWidget> {
                         child: Stack(
                           children: [
                             ClipRRect(
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              borderRadius: BorderRadius.all(Radius.circular(0)),
                               child: CachedNetworkImage(
                                 height: double.infinity,
                                 width: double.infinity,
@@ -140,7 +140,7 @@ class _HomeSliderWidgetState extends State<HomeSliderWidget> {
                       margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(
-                            Radius.circular(8),
+                            Radius.circular(0),
                           ),
                           color: _current == widget.slides.indexOf(slide)
                               ? Helper.of(context).getColorFromHex(slide.indicatorColor)

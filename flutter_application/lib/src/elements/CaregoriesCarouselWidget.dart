@@ -38,21 +38,22 @@ class CategoriesCarouselWidget extends StatelessWidget {
      return this.categories.isEmpty
         ? CircularLoadingWidget(height: 150)
         : Container(
-       height: 250,
+       height: 325,
             child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent:80,
                     childAspectRatio: 0.6,
-                    crossAxisSpacing: 11,
+                    crossAxisSpacing: 10,
                     mainAxisSpacing: 0),
                 itemCount: this.categories.length,
                 itemBuilder: (context, index) {
                   double _marginLeft = 0;
                   double _margintop = 0;
                   (index %5 == 0) ? _marginLeft = 5 : _marginLeft = 0;
+
                   return new CategoriesCarouselItemWidget(
                     marginLeft: _marginLeft,
-                    margintop: 5,
+                    margintop: 0,
                     category: this.categories.elementAt(index),
                   );
                 },),);
